@@ -133,7 +133,15 @@ const messages = [
 
 // اختيار رسالة اليوم
 const today = new Date();
-const index = today.getDate() % messages.length;
+
+const dateKey = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+
+let hash = 0;
+for (let i = 0; i < dateKey.length; i++) {
+hash = dateKey.charCodeAt(i) + ((hash << 5) - hash);
+}
+
+const index = Math.abs(hash) % messages.length;
 
 // عرض الرسالة داخل الموقع
 document.addEventListener("DOMContentLoaded", () => {
