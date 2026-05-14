@@ -1,669 +1,301 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
 
-*{
+/* ===== RESET ===== */
+* {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
 
-body{
-
+/* ===== BODY FIX (المهم) ===== */
+body {
 font-family: 'Cairo', sans-serif;
-
-height: 100vh;
-
-overflow: hidden;
-
-background: linear-gradient(
-to bottom,
-#cfefff 0%,
-#dff7ea 100%
-);
-
+min-height: 100vh;
+overflow-x: hidden;
+overflow-y: auto;
+background: linear-gradient(to bottom,#cfefff 0%,#dff7ea 100%);
 position: relative;
 }
 
-
-/* السماء */
-
-.sky{
+/* ===== SKY ===== */
+.sky {
 position: absolute;
-
 width: 100%;
 height: 100%;
 }
 
-
-/* الغيوم */
-
-.cloud{
-
+/* ===== CLOUDS ===== */
+.cloud {
 position: absolute;
-
 background: rgba(255,255,255,0.7);
-
 border-radius: 100px;
-
 filter: blur(2px);
 }
 
-
 .cloud::before,
-.cloud::after{
-
+.cloud::after {
 content: "";
-
 position: absolute;
-
 background: rgba(255,255,255,0.7);
-
 border-radius: 50%;
 }
 
-
-.cloud1{
-
+/* cloud1 */
+.cloud1 {
 width: 220px;
 height: 70px;
-
 top: 100px;
 right: -250px;
-
 animation: moveCloud 45s linear infinite;
 }
 
-
-.cloud1::before{
-
+.cloud1::before {
 width: 90px;
 height: 90px;
-
 top: -40px;
 left: 30px;
 }
 
-
-.cloud1::after{
-
+.cloud1::after {
 width: 110px;
 height: 110px;
-
 top: -50px;
 right: 30px;
 }
 
-
-.cloud2{
-
+/* cloud2 */
+.cloud2 {
 width: 180px;
 height: 60px;
-
 top: 250px;
 left: -220px;
-
 animation: moveCloud 60s linear infinite;
 }
 
-
-.cloud2::before{
-
+.cloud2::before {
 width: 70px;
 height: 70px;
-
 top: -30px;
 left: 20px;
 }
 
-
-.cloud2::after{
-
+.cloud2::after {
 width: 90px;
 height: 90px;
-
 top: -40px;
 right: 20px;
 }
 
-
-.cloud3{
-
+/* cloud3 */
+.cloud3 {
 width: 250px;
 height: 80px;
-
 bottom: 120px;
 right: -300px;
-
 animation: moveCloud 70s linear infinite;
 }
 
-
-.cloud3::before{
-
+.cloud3::before {
 width: 100px;
 height: 100px;
-
 top: -40px;
 left: 30px;
 }
 
-
-.cloud3::after{
-
+.cloud3::after {
 width: 120px;
 height: 120px;
-
 top: -50px;
 right: 30px;
 }
 
-
-@keyframes moveCloud{
-
-from{
-transform: translateX(0);
+/* ===== ANIMATION ===== */
+@keyframes moveCloud {
+from { transform: translateX(0); }
+to { transform: translateX(-1600px); }
 }
 
-to{
-transform: translateX(-1600px);
-}
-}
-
-
-/* العصافير */
-
-.bird{
-
+/* ===== BIRDS ===== */
+.bird {
 width: 18px;
-
 height: 18px;
-
 border-top: 3px solid #6d8b8b;
-
 border-left: 3px solid #6d8b8b;
-
 border-radius: 50%;
-
 transform: rotate(45deg);
-
 opacity: 0.7;
 }
-.birds{
 
+.birds {
 position: absolute;
-
 top: 170px;
-
 left: 160px;
-
 display: flex;
-
 gap: 18px;
 }
-/* المحتوى */
 
-.container{
-
-height: 100vh;
-
+/* ===== CONTAINER (مهم) ===== */
+.container {
+min-height: 100vh;
+height: auto;
 display: flex;
-
 flex-direction: column;
-
 justify-content: center;
-
 align-items: center;
-
 text-align: center;
-
 position: relative;
-
 z-index: 2;
+padding: 20px;
 }
 
-
-/* سكينة */
-
-h1{
-
+/* ===== TITLE ===== */
+h1 {
 font-size: 110px;
-
 color: #3d6f67;
-
 font-weight: 700;
-
 letter-spacing: 8px;
-
 animation: float 4s ease-in-out infinite;
 }
 
-
-/* الجملة */
-
-p{
-
+/* ===== TEXT ===== */
+p {
 margin-top: 15px;
-
 font-size: 28px;
-
 color: #557d76;
-
-font-weight: 400;
-
-letter-spacing: 2px;
 }
 
-
-/* حركة سكينة */
-
-@keyframes float{
-
-0%{
-transform: translateY(0px);
+/* ===== FLOAT ===== */
+@keyframes float {
+0% { transform: translateY(0); }
+50% { transform: translateY(-10px); }
+100% { transform: translateY(0); }
 }
 
-50%{
-transform: translateY(-10px);
-}
-
-100%{
-transform: translateY(0px);
-}
-}
-.daily-message{
-
+/* ===== DAILY BOX ===== */
+.daily-message {
 margin-top: 35px;
-
 background: rgba(255,255,255,0.25);
-
 padding: 25px;
-
 border-radius: 25px;
-
 backdrop-filter: blur(10px);
-
 width: 420px;
-
-box-shadow:
-0 8px 30px rgba(0,0,0,0.05);
-}
-h2{
-
-color: #6aa6b6;
-
-font-size: 26px;
-
-margin-bottom: 15px;
-}
-.message{
-
-color: #4f7f85;
-
-font-size: 24px;
-
-line-height: 1.9;
-}
-nav{
-
-position: absolute;
-
-top: 30px;
-
-right: 50px;
-
-display: flex;
-
-gap: 18px;
-
-z-index: 10;
-}
-nav a{
-
-text-decoration: none;
-
-color: #557d76;
-
-background: rgba(255,255,255,0.25);
-
-padding: 12px 22px;
-
-border-radius: 30px;
-
-backdrop-filter: blur(8px);
-
-transition: 0.3s;
-
-font-size: 18px;
-display:inline-block;
-}
-nav a{
-
-text-decoration: none;
-
-color: #557d76;
-
-background: rgba(255,255,255,0.25);
-
-padding: 12px 22px;
-
-border-radius: 30px;
-
-backdrop-filter: blur(8px);
-
-transition: 0.3s;
-
-font-size: 18px;
-}
-nav a:hover{
-
-background: rgba(255,255,255,0.5);
-
-transform: translateY(-4px);
-
-box-shadow:
-0 8px 20px rgba(0,0,0,0.08);
-}
-.daily-message{
-
+box-shadow: 0 8px 30px rgba(0,0,0,0.05);
 animation: fadeUp 1.5s ease;
 }
-@keyframes fadeUp{
 
-from{
-
-opacity: 0;
-
-transform: translateY(30px);
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
 }
 
-to{
-
-opacity: 1;
-
-transform: translateY(0);
-}
-}
-.dua-cards{
-
+/* ===== NAV ===== */
+nav {
+position: absolute;
+top: 30px;
+right: 20px;
+left: 20px;
 display: flex;
-
 flex-wrap: wrap;
-
 justify-content: center;
-
-gap: 25px;
-
-margin-top: 50px;
+gap: 12px;
+z-index: 10;
 }
 
-
-.dua-card{
-
-background: rgba(255,255,255,0.25);
-
-width: 220px;
-
-padding: 30px;
-
-border-radius: 25px;
-
-backdrop-filter: blur(10px);
-
-box-shadow:
-0 8px 20px rgba(0,0,0,0.06);
-
-transition: 0.3s;
-
-color: #6aa6b6;
+nav a {
 text-decoration: none;
-
-font-size: 24px;
-}
-
-
-.dua-card h3{
-
-margin-top: 15px;
-
-font-size: 24px;
-
-font-weight: 600;
-}
-
-
-.dua-card:hover{
-
-transform: translateY(-8px);
-
-background: rgba(255,255,255,0.4);
-}
-.dua-cards{
-
-display: flex;
-
-justify-content: center;
-
-flex-wrap: wrap;
-
-gap: 30px;
-
-margin-top: 50px;
-}
-.dua-box{
-
-width: 700px;
-
-margin: 50px auto;
-
-background: rgba(255,255,255,0.30);
-
-padding: 40px;
-
-border-radius: 35px;
-
-backdrop-filter: blur(12px);
-
-box-shadow: 0 10px 35px rgba(0,0,0,0.08);
-
-}
-
-.dua-text{
-
-font-size: 34px;
-
-line-height: 2.3;
-
-color: #4f7f85;
-
-font-weight: 600;
-
-}
-
-.dua-benefit{
-
-margin-top: 25px;
-
-color: #7aaeb8;
-
-font-size: 22px;
-
-line-height: 1.8;
-
-}
-
-.buttons{
-
-margin-top: 15px;
-
-display: flex;
-
-justify-content: center;
-
-gap: 35px;
-
-}
-
-.buttons button{
-
-appearance: none;
-
-border: none;
-
-padding: 15px 38px;
-
-border-radius: 50px;
-
-background: linear-gradient(135deg,#d5ebf5,#f5f8fb);
-
-color: #4f7f85;
-
-font-size: 19px;
-
-font-weight: 600;
-
-cursor: pointer;
-
-transition: 0.35s;
-
-box-shadow: 0 10px 25px rgba(106,166,182,0.25);
-
-}
-.buttons button:hover{
-
-transform: translateY(-6px) scale(1.05);
-
-box-shadow: 0 14px 30px rgba(106,166,182,0.35);
-
-}
-button{
-
-appearance: none !important;
-
-border: none !important;
-
-padding: 18px 45px !important;
-
-border-radius: 50px !important;
-
-background: linear-gradient(135deg,#d5ebf5,#f5f8fb) !important;
-
-color: #4f7f85 !important;
-
-font-size: 22px !important;
-
-font-weight: 600 !important;
-
-cursor: pointer !important;
-
-transition: 0.35s !important;
-
-box-shadow: 0 10px 25px rgba(106,166,182,0.25) !important;
-
-}
-
-button:hover{
-
-transform: translateY(-6px) scale(1.05);
-
-box-shadow: 0 14px 30px rgba(106,166,182,0.35);
-
-}
-#duaCounter{
-margin-top: 18px;
+color: #557d76;
+background: rgba(255,255,255,0.25);
+padding: 10px 18px;
+border-radius: 30px;
+backdrop-filter: blur(8px);
+transition: 0.3s;
 font-size: 16px;
-color: #8a8a8a;
-}
-#duaCounter{
-margin-top: 15px;
-font-size: 18px;
-color: #6f8577;
-font-weight: bold;
-}
-.dua-text{
-font-size: 18px;
-line-height: 1.8;
+display: inline-block;
 }
 
-.travel-long{
-font-size: 22px;
-line-height: 2;
+nav a:hover {
+background: rgba(255,255,255,0.5);
+transform: translateY(-4px);
 }
-quran-text {
-font-family: "Amiri Quran", "Traditional Arabic", serif;
-font-size: 11px;
-line-height: 2.4;
-direction: rtl;
-text-align: center;
-}
-@media (max-width: 768px) {
-.container {
-max-width: 100%;
-padding: 10px;
+
+/* ===== DUAS ===== */
+.dua-cards {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 25px;
+margin-top: 50px;
 }
 
 .dua-card {
-width: 100%;
-}
-
-button {
-width: 100%;
-}
-}
-.quran-text {
-font-family: "Amiri Quran", serif;
-font-size: 15px; /* كان كبير → صار أصغر */
-line-height: 2;
-text-align: center;
-}
-
-.dua-benefit {
-font-size: 13px;
-margin-top: 10px;
-text-align: center;
-color: #777;
-}
-body.sunnah-page .quran-text {
+background: rgba(255,255,255,0.25);
+width: 220px;
+padding: 25px;
+border-radius: 25px;
+backdrop-filter: blur(10px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+transition: 0.3s;
+color: #6aa6b6;
+text-decoration: none;
 font-size: 20px;
-line-height: 2;
 }
+
+.dua-card:hover {
+transform: translateY(-8px);
+}
+
+/* ===== BOX ===== */
+.dua-box {
+width: 90%;
+max-width: 700px;
+margin: 50px auto;
+background: rgba(255,255,255,0.30);
+padding: 30px;
+border-radius: 35px;
+backdrop-filter: blur(12px);
+box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+}
+
+/* ===== BUTTON ===== */
+button {
+border: none;
+padding: 15px 35px;
+border-radius: 50px;
+background: linear-gradient(135deg,#d5ebf5,#f5f8fb);
+color: #4f7f85;
+font-size: 18px;
+font-weight: 600;
+cursor: pointer;
+transition: 0.3s;
+box-shadow: 0 10px 25px rgba(106,166,182,0.25);
+}
+
+button:hover {
+transform: translateY(-6px) scale(1.05);
+}
+
+/* ===== MOBILE FIX ===== */
 @media (max-width: 768px) {
 
-/* يخلي الصفحة ما تخرب على الجوال */
-body {
-overflow-x: hidden;
-}
-
-/* يخلي المحتوى يناسب الشاشة */
-.container {
-width: 100%;
-padding: 10px;
-}
-
-/* الكروت تصير أضيق وأنظف */
-.card, div {
-max-width: 95%;
-margin: 10px auto;
-}
-
-/* الخطوط أصغر شوي للجوال */
 h1 {
-font-size: 22px;
+font-size: 50px;
 text-align: center;
 }
 
-/* الأزرار تصير مريحة للمس */
+.daily-message {
+width: 90%;
+}
+
+.dua-card {
+width: 90%;
+}
+
 button {
-width: 100%;
-font-size: 14px;
+width: 90%;
 }
 
-/* النافبار ما يكسر الشاشة */
-.navbar {
+nav {
 flex-wrap: wrap;
-gap: 6px;
-}
-
-.navbar a {
-font-size: 12px;
-padding: 8px 10px;
+justify-content: center;
 }
 }
