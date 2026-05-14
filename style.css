@@ -1,0 +1,627 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+
+font-family: 'Cairo', sans-serif;
+
+height: 100vh;
+
+overflow: hidden;
+
+background: linear-gradient(
+to bottom,
+#cfefff 0%,
+#dff7ea 100%
+);
+
+position: relative;
+}
+
+
+/* السماء */
+
+.sky{
+position: absolute;
+
+width: 100%;
+height: 100%;
+}
+
+
+/* الغيوم */
+
+.cloud{
+
+position: absolute;
+
+background: rgba(255,255,255,0.7);
+
+border-radius: 100px;
+
+filter: blur(2px);
+}
+
+
+.cloud::before,
+.cloud::after{
+
+content: "";
+
+position: absolute;
+
+background: rgba(255,255,255,0.7);
+
+border-radius: 50%;
+}
+
+
+.cloud1{
+
+width: 220px;
+height: 70px;
+
+top: 100px;
+right: -250px;
+
+animation: moveCloud 45s linear infinite;
+}
+
+
+.cloud1::before{
+
+width: 90px;
+height: 90px;
+
+top: -40px;
+left: 30px;
+}
+
+
+.cloud1::after{
+
+width: 110px;
+height: 110px;
+
+top: -50px;
+right: 30px;
+}
+
+
+.cloud2{
+
+width: 180px;
+height: 60px;
+
+top: 250px;
+left: -220px;
+
+animation: moveCloud 60s linear infinite;
+}
+
+
+.cloud2::before{
+
+width: 70px;
+height: 70px;
+
+top: -30px;
+left: 20px;
+}
+
+
+.cloud2::after{
+
+width: 90px;
+height: 90px;
+
+top: -40px;
+right: 20px;
+}
+
+
+.cloud3{
+
+width: 250px;
+height: 80px;
+
+bottom: 120px;
+right: -300px;
+
+animation: moveCloud 70s linear infinite;
+}
+
+
+.cloud3::before{
+
+width: 100px;
+height: 100px;
+
+top: -40px;
+left: 30px;
+}
+
+
+.cloud3::after{
+
+width: 120px;
+height: 120px;
+
+top: -50px;
+right: 30px;
+}
+
+
+@keyframes moveCloud{
+
+from{
+transform: translateX(0);
+}
+
+to{
+transform: translateX(-1600px);
+}
+}
+
+
+/* العصافير */
+
+.bird{
+
+width: 18px;
+
+height: 18px;
+
+border-top: 3px solid #6d8b8b;
+
+border-left: 3px solid #6d8b8b;
+
+border-radius: 50%;
+
+transform: rotate(45deg);
+
+opacity: 0.7;
+}
+.birds{
+
+position: absolute;
+
+top: 170px;
+
+left: 160px;
+
+display: flex;
+
+gap: 18px;
+}
+/* المحتوى */
+
+.container{
+
+height: 100vh;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+text-align: center;
+
+position: relative;
+
+z-index: 2;
+}
+
+
+/* سكينة */
+
+h1{
+
+font-size: 110px;
+
+color: #3d6f67;
+
+font-weight: 700;
+
+letter-spacing: 8px;
+
+animation: float 4s ease-in-out infinite;
+}
+
+
+/* الجملة */
+
+p{
+
+margin-top: 15px;
+
+font-size: 28px;
+
+color: #557d76;
+
+font-weight: 400;
+
+letter-spacing: 2px;
+}
+
+
+/* حركة سكينة */
+
+@keyframes float{
+
+0%{
+transform: translateY(0px);
+}
+
+50%{
+transform: translateY(-10px);
+}
+
+100%{
+transform: translateY(0px);
+}
+}
+.daily-message{
+
+margin-top: 35px;
+
+background: rgba(255,255,255,0.25);
+
+padding: 25px;
+
+border-radius: 25px;
+
+backdrop-filter: blur(10px);
+
+width: 420px;
+
+box-shadow:
+0 8px 30px rgba(0,0,0,0.05);
+}
+h2{
+
+color: #6aa6b6;
+
+font-size: 26px;
+
+margin-bottom: 15px;
+}
+.message{
+
+color: #4f7f85;
+
+font-size: 24px;
+
+line-height: 1.9;
+}
+nav{
+
+position: absolute;
+
+top: 30px;
+
+right: 50px;
+
+display: flex;
+
+gap: 18px;
+
+z-index: 10;
+}
+nav a{
+
+text-decoration: none;
+
+color: #557d76;
+
+background: rgba(255,255,255,0.25);
+
+padding: 12px 22px;
+
+border-radius: 30px;
+
+backdrop-filter: blur(8px);
+
+transition: 0.3s;
+
+font-size: 18px;
+display:inline-block;
+}
+nav a{
+
+text-decoration: none;
+
+color: #557d76;
+
+background: rgba(255,255,255,0.25);
+
+padding: 12px 22px;
+
+border-radius: 30px;
+
+backdrop-filter: blur(8px);
+
+transition: 0.3s;
+
+font-size: 18px;
+}
+nav a:hover{
+
+background: rgba(255,255,255,0.5);
+
+transform: translateY(-4px);
+
+box-shadow:
+0 8px 20px rgba(0,0,0,0.08);
+}
+.daily-message{
+
+animation: fadeUp 1.5s ease;
+}
+@keyframes fadeUp{
+
+from{
+
+opacity: 0;
+
+transform: translateY(30px);
+}
+
+to{
+
+opacity: 1;
+
+transform: translateY(0);
+}
+}
+.dua-cards{
+
+display: flex;
+
+flex-wrap: wrap;
+
+justify-content: center;
+
+gap: 25px;
+
+margin-top: 50px;
+}
+
+
+.dua-card{
+
+background: rgba(255,255,255,0.25);
+
+width: 220px;
+
+padding: 30px;
+
+border-radius: 25px;
+
+backdrop-filter: blur(10px);
+
+box-shadow:
+0 8px 20px rgba(0,0,0,0.06);
+
+transition: 0.3s;
+
+color: #6aa6b6;
+text-decoration: none;
+
+font-size: 24px;
+}
+
+
+.dua-card h3{
+
+margin-top: 15px;
+
+font-size: 24px;
+
+font-weight: 600;
+}
+
+
+.dua-card:hover{
+
+transform: translateY(-8px);
+
+background: rgba(255,255,255,0.4);
+}
+.dua-cards{
+
+display: flex;
+
+justify-content: center;
+
+flex-wrap: wrap;
+
+gap: 30px;
+
+margin-top: 50px;
+}
+.dua-box{
+
+width: 700px;
+
+margin: 50px auto;
+
+background: rgba(255,255,255,0.30);
+
+padding: 40px;
+
+border-radius: 35px;
+
+backdrop-filter: blur(12px);
+
+box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+
+}
+
+.dua-text{
+
+font-size: 34px;
+
+line-height: 2.3;
+
+color: #4f7f85;
+
+font-weight: 600;
+
+}
+
+.dua-benefit{
+
+margin-top: 25px;
+
+color: #7aaeb8;
+
+font-size: 22px;
+
+line-height: 1.8;
+
+}
+
+.buttons{
+
+margin-top: 15px;
+
+display: flex;
+
+justify-content: center;
+
+gap: 35px;
+
+}
+
+.buttons button{
+
+appearance: none;
+
+border: none;
+
+padding: 15px 38px;
+
+border-radius: 50px;
+
+background: linear-gradient(135deg,#d5ebf5,#f5f8fb);
+
+color: #4f7f85;
+
+font-size: 19px;
+
+font-weight: 600;
+
+cursor: pointer;
+
+transition: 0.35s;
+
+box-shadow: 0 10px 25px rgba(106,166,182,0.25);
+
+}
+.buttons button:hover{
+
+transform: translateY(-6px) scale(1.05);
+
+box-shadow: 0 14px 30px rgba(106,166,182,0.35);
+
+}
+button{
+
+appearance: none !important;
+
+border: none !important;
+
+padding: 18px 45px !important;
+
+border-radius: 50px !important;
+
+background: linear-gradient(135deg,#d5ebf5,#f5f8fb) !important;
+
+color: #4f7f85 !important;
+
+font-size: 22px !important;
+
+font-weight: 600 !important;
+
+cursor: pointer !important;
+
+transition: 0.35s !important;
+
+box-shadow: 0 10px 25px rgba(106,166,182,0.25) !important;
+
+}
+
+button:hover{
+
+transform: translateY(-6px) scale(1.05);
+
+box-shadow: 0 14px 30px rgba(106,166,182,0.35);
+
+}
+#duaCounter{
+margin-top: 18px;
+font-size: 16px;
+color: #8a8a8a;
+}
+#duaCounter{
+margin-top: 15px;
+font-size: 18px;
+color: #6f8577;
+font-weight: bold;
+}
+.dua-text{
+font-size: 18px;
+line-height: 1.8;
+}
+
+.travel-long{
+font-size: 22px;
+line-height: 2;
+}
+quran-text {
+font-family: "Amiri Quran", "Traditional Arabic", serif;
+font-size: 11px;
+line-height: 2.4;
+direction: rtl;
+text-align: center;
+}
+@media (max-width: 768px) {
+.container {
+max-width: 100%;
+padding: 10px;
+}
+
+.dua-card {
+width: 100%;
+}
+
+button {
+width: 100%;
+}
+}
+.quran-text {
+font-family: "Amiri Quran", serif;
+font-size: 15px; /* كان كبير → صار أصغر */
+line-height: 2;
+text-align: center;
+}
+
+.dua-benefit {
+font-size: 13px;
+margin-top: 10px;
+text-align: center;
+color: #777;
+}
+body.sunnah-page .quran-text {
+font-size: 20px;
+line-height: 2;
+}
