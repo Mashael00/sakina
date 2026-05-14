@@ -625,3 +625,45 @@ body.sunnah-page .quran-text {
 font-size: 20px;
 line-height: 2;
 }
+@media (max-width: 768px) {
+
+/* يخلي الصفحة ما تخرب على الجوال */
+body {
+overflow-x: hidden;
+}
+
+/* يخلي المحتوى يناسب الشاشة */
+.container {
+width: 100%;
+padding: 10px;
+}
+
+/* الكروت تصير أضيق وأنظف */
+.card, div {
+max-width: 95%;
+margin: 10px auto;
+}
+
+/* الخطوط أصغر شوي للجوال */
+h1 {
+font-size: 22px;
+text-align: center;
+}
+
+/* الأزرار تصير مريحة للمس */
+button {
+width: 100%;
+font-size: 14px;
+}
+
+/* النافبار ما يكسر الشاشة */
+.navbar {
+flex-wrap: wrap;
+gap: 6px;
+}
+
+.navbar a {
+font-size: 12px;
+padding: 8px 10px;
+}
+}
